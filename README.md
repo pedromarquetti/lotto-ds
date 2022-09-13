@@ -1,6 +1,6 @@
 # Welcom to my lotto analysis
 
-## What id does?
+## What it does?
 
 Gets all lottery results from [here](redeloteria.com.br) and plots graphs
 
