@@ -26,7 +26,7 @@ def plot_graphs():
     figure, ax = plt.subplots(2, 1)
 
     # Todos os resultados
-    todos_os_resultados = total.plot.box(
+    total.plot.box(
         ax=ax[0],
         title="Todos os resultados",
         ylabel="Números sorteados (0-60)",
@@ -39,7 +39,7 @@ def plot_graphs():
 
     resultados = virada.iloc[:, 1:8]
 
-    resultados_da_virada = resultados.plot.box(
+    resultados.plot.box(
         ax=ax[1],
         grid=True,
         title="Resultados Mega da Virada",
