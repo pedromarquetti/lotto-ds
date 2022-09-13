@@ -23,11 +23,19 @@ def plot_graphs():
     total = df.iloc[:, 1:8]
 
     # Initialise the subplot function using number of rows and columns
-    figure, ax = plt.subplots(2, 1)
+    figure, ax = plt.subplots(2, 2)
+
+    dez_ultimos = df.iloc[:9, 1:8]
+    dez_ultimos.plot.box(
+        ax=ax[0][1],
+        title="Últimos 10 resultados",
+        ylabel="Números sorteados (0-60)",
+        grid=True,
+    )
 
     # Todos os resultados
     total.plot.box(
-        ax=ax[0],
+        ax=ax[0][0],
         title="Todos os resultados",
         ylabel="Números sorteados (0-60)",
         grid=True,
@@ -39,15 +47,24 @@ def plot_graphs():
 
     resultados = virada.iloc[:, 1:8]
 
+    dez_ultimos_virada = virada.iloc[:9, 1:8]
+    dez_ultimos_virada.plot.box(
+        ax=ax[1][0],
+        grid=True,
+        title="10 ultimos Resultados Mega da Virada",
+        ylabel="Números sorteados (0-60)",
+
+    )
+
     resultados.plot.box(
-        ax=ax[1],
+        ax=ax[1][1],
         grid=True,
         title="Resultados Mega da Virada",
         ylabel="Números sorteados (0-60)",
 
     )
     figure.suptitle("titulo")
-    # plt.savefig("results")
+    plt.savefig("4results")
     plt.show()
 
 
