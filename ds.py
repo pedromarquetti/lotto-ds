@@ -6,12 +6,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 import requests as req
 
-URL = "https://redeloteria.com.br/rotinas_01/arquivos_txt/tx_megasena_todos_resultados.txt"
+URL = "https://redeloteria.com.br/resultados/fc_imprime_relatorios.php?jogo=MegaSena&ordem_sorteio=nao&_=1702507555928"
 get = req.get(
     URL
 )
 df = pd.DataFrame(get.json()["data"], columns=[
-    "Conc", "Data",	"n1", "n2", "n3", "n4", "n5", "n6", "Gan.", "Prêmio"
+    "Conc", "Data",	"n1", "n2", "n3", "n4", "n5", "n6", "Gan.", "Prêmio","Número de apostas"
 ])
 nums = ["Conc",	"n1", "n2", "n3", "n4", "n5", "n6", "Gan."]
 df[nums] = df[nums].apply(
@@ -23,7 +23,7 @@ def all_results(res: int):
     # "results" column
     total = df.iloc[:, 1:8]
     figure, ax = plt.subplots(2, 1)
-
+    
     x_ultimos = df.iloc[:res, 1: 8]
 
     x_ultimos.plot.box(
@@ -68,10 +68,14 @@ def virada(res: int):
 
 
 def plot_graphs():
+
     all_results(5)
     virada(5)
+
     plt.show()
 
 
 if __name__ == '__main__':
     plot_graphs()
+    
+
