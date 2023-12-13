@@ -27,5 +27,8 @@ py ds.py
 
 ## Screenshots
 
-[<img width=200 alt="Todos os resultados" src="screenshots/results.png?raw=true">](screenshots/results.png)
-[<img width=200 alt="Todos os resultados" src="screenshots/4results.png?raw=true">](screenshots/4results.png)
+Histórico de resultados
+![Todos os resultados](screenshots/all_results.png)
+
+Todos os resultados da mega-sena
+![Resultados da Mega-Sena](screenshots/mega.png)
