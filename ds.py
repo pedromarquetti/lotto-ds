@@ -6,9 +6,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 import requests as req
 
-URL = "https://redeloteria.com.br/resultados/fc_imprime_relatorios.php?jogo=MegaSena&ordem_sorteio=nao&_=1702507555928"
+URL = "https://redeloteria.com.br"
+PATH = "/resultados/fc_imprime_relatorios.php?jogo=MegaSena&ordem_sorteio=nao&_=1702507555928"
 get = req.get(
-    URL
+    URL+PATH
 )
 df = pd.DataFrame(get.json()["data"], columns=[
     "Conc", "Data",	"n1", "n2", "n3", "n4", "n5", "n6", "Gan.", "Prêmio","Número de apostas"
@@ -23,7 +24,7 @@ def all_results(res: int):
     # "results" column
     total = df.iloc[:, 1:8]
     figure, ax = plt.subplots(2, 1)
-    
+
     x_ultimos = df.iloc[:res, 1: 8]
 
     x_ultimos.plot.box(
@@ -77,5 +78,5 @@ def plot_graphs():
 
 if __name__ == '__main__':
     plot_graphs()
-    
+    print(f"Dados são do site {URL}")
 
