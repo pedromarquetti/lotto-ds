@@ -12,6 +12,11 @@ Gets all lottery results from [here](redeloteria.com.br) and plots graphs
 pip3 install -r requirements.txt
 ```
 
+```
+# on linux / deb.
+sudo apt install python3-tk
+```
+
 then
 
 ```
