@@ -1,8 +1,8 @@
-# Welcom to my lotto analysis
+# Welcome to my lotto analysis
 
 ## What it does?
 
-Gets all lottery results from [here](redeloteria.com.br) and plots graphs
+Gets all lottery results from [here](https://redeloteria.com.br/) and plots graphs
 
 ## How to run
 
